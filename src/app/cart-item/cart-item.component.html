@@ -1,11 +1,11 @@
 <div>
-  <img src="assets/image/headset.jpg">
-  <p>Oculus Quest 2 — Advanced All-In-One Virtual Reality Headset — 128 GB</p>
+  <img src="{{item.image}}">
+  <p>{{item.description}}</p>
   <div>⭐⭐⭐⭐⭐</div>
-  <div>$99</div>
+  <div>{{item.price}}</div>
   <div class="input-group mb-3">
     <button class="btn btn-primary" type="submit">-</button>
-    <input type="text" class="form-control" placeholder=" ">
+    <input type="text" class="form-control" value="{{item.qty}}">
     <button class="btn btn-primary" type="submit">+</button>
   </div>
 </div>
