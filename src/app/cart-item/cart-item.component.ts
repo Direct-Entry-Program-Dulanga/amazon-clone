@@ -9,7 +9,7 @@ import {Item} from "../dto/item";
 export class CartItemComponent implements OnInit {
 
   item = new Item("I001",
-    "src/assets/image/headset.jpg",
+    "assets/image/headset.jpg",
     "Oculus Quest 2 — Advanced All-In-One Virtual Reality Headset — 128 GB",
     4,
     99,
