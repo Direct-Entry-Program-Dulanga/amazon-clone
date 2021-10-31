@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../dto/item";
 
 @Component({
@@ -8,12 +8,8 @@ import {Item} from "../dto/item";
 })
 export class CartItemComponent implements OnInit {
 
-  item = new Item("I001",
-    "assets/image/headset.jpg",
-    "Oculus Quest 2 — Advanced All-In-One Virtual Reality Headset — 128 GB",
-    4,
-    99,
-    5);
+  @Input()
+  item !: Item;
 
   inCart = 0;
 

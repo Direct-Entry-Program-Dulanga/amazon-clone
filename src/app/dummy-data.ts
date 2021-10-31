@@ -1,6 +1,6 @@
 import {Item} from "./dto/item";
 
-const DUMMY_DATA: Array<Item> = [
+export const DUMMY_DATA: Array<Item> = [
   new Item(
     "I001",
     "assets/image/headset.jpg",
