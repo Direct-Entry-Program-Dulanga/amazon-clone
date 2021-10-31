@@ -5,11 +5,24 @@ header{
   align-items: center;
   padding: 10px;
 
+  .logo-container{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid transparent;
+
+    &:hover{
+      border: 1px solid white;
+    }
+  }
+
   .logo{
     background-image: url("../../assets/image/amazon-icons.png");
     background-position: -10px -51px;
     width: 97px;
     height: 30px;
   }
-
 }
