@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Item} from "../dto/item";
 
 @Component({
@@ -11,6 +11,10 @@ export class CartItemComponent implements OnInit {
   @Input()
   item !: Item;
 
+  @Output()
+  cartOnChange = new EventEmitter<number>();
+
+
   inCart = 0;
 
   constructor() { }
@@ -20,5 +24,7 @@ export class CartItemComponent implements OnInit {
 
   updateCart(increment: boolean) {
     increment? this.inCart++: this.inCart--;
+    this.cartOnChange.emit(this.inCart);
+
   }
 }
