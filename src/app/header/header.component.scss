@@ -1,4 +1,15 @@
 header{
-  background-color: yellowgreen;
-  height: 50px;
+  background-color: #232f3e;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  .logo{
+    background-image: url("../../assets/image/amazon-icons.png");
+    background-position: -10px -51px;
+    width: 97px;
+    height: 30px;
+  }
+
 }

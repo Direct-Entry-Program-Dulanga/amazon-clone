@@ -44,11 +44,12 @@
   .add-to-cart-ctrl{
     width: 40%;
     margin-top: 10px;
+
+    input{
+      text-align: center;
+    }
   }
 
-  input{
-    text-align: center;
-  }
 
   &:hover{
     border: 1px solid lightgray;
