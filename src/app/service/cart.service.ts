@@ -25,4 +25,11 @@ export class CartService {
     this.cartItems.push({code: it.code, qty: toCart});
     console.log(toCart, it.description)
   }
+
+  getTotalItemsInCart(): number{
+    let totalItems = 0;
+
+    this.cartItems.forEach(item => totalItems += item.qty);
+    return totalItems;
+  }
 }

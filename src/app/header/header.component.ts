@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updateCart() {
+    this.totalItemsInCart = this.cartService.getTotalItemsInCart();
+  }
+
 }
