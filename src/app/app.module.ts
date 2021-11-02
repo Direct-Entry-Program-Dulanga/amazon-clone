@@ -9,30 +9,9 @@ import { ItemComponent } from './item/item.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from "@angular/router";
 import { CartComponent } from './cart/cart.component';
+import {AppRoutingModule} from "./app-routing.module";
 
-const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'items',
-    component: ItemComponent
-  },
-  {
-    path: 'cart',
-    component: CartComponent
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: '/home'
-  },
-  {
-    path: '**',
-    redirectTo: '/home'
-  }
-];
+
 
 @NgModule({
   declarations: [
@@ -46,7 +25,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
