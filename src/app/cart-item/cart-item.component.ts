@@ -33,7 +33,7 @@ export class CartItemComponent implements OnInit {
   }
 
   navigateToItem() {
-    this.router.navigateByUrl('/item')
+    this.router.navigateByUrl('/items')
   }
 
 }
