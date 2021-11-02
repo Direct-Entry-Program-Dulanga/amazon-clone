@@ -9,29 +9,29 @@ import {Item} from "./dto/item";
 })
 export class AppComponent {
 
-  items = DUMMY_DATA;
-  cartItems: Array<{code: string, qty: number}> = [];
-
-  updateCart(inCart: number, it: Item) {
-
-    const item = this.cartItems.find(i => i.code === it.code);
-
-    if(item){
-      item.qty = inCart;
-      if(item.qty === 0){
-        this.cartItems.splice(this.cartItems.indexOf(item), 1);
-      }
-    }else{
-      this.cartItems.push({code: it.code, qty:inCart});
-    }
-    this.cartItems.push({code: it.code, qty: inCart});
-    console.log(inCart, it.description)
-  }
-
-  getTotalItemsInCart(): number{
-    let totalItems = 0;
-
-    this.cartItems.forEach(item => totalItems += item.qty);
-    return totalItems;
-  }
+  // items = DUMMY_DATA;
+  // cartItems: Array<{code: string, qty: number}> = [];
+  //
+  // updateCart(inCart: number, it: Item) {
+  //
+  //   const item = this.cartItems.find(i => i.code === it.code);
+  //
+  //   if(item){
+  //     item.qty = inCart;
+  //     if(item.qty === 0){
+  //       this.cartItems.splice(this.cartItems.indexOf(item), 1);
+  //     }
+  //   }else{
+  //     this.cartItems.push({code: it.code, qty:inCart});
+  //   }
+  //   this.cartItems.push({code: it.code, qty: inCart});
+  //   console.log(inCart, it.description)
+  // }
+  //
+  // getTotalItemsInCart(): number{
+  //   let totalItems = 0;
+  //
+  //   this.cartItems.forEach(item => totalItems += item.qty);
+  //   return totalItems;
+  // }
 }
