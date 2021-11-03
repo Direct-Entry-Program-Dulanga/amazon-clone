@@ -1,7 +1,7 @@
 <div class="item-container">
-  <img src="assets/image/HDD.jpg" alt="product">
+  <img class="item-image" src="{{item.image}}" alt="product">
   <div>
-    <p class="item-title">Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox</p>
+    <p class="item-title">{{item.title}}</p>
     <div class="item-rating" [ngSwitch]="4">
       <div *ngSwitchCase="5">⭐⭐⭐⭐⭐</div>
       <div *ngSwitchCase="4">⭐⭐⭐⭐</div>

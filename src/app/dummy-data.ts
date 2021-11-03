@@ -7,7 +7,8 @@ export const DUMMY_DATA: Array<Item> = [
     "Oculus Quest 2 — Advanced All-In-One Virtual Reality Headset — 128 GB",
     5,
     99,
-    5),
+    5,
+    ''),
   new Item(
     "I002",
     "assets/image/headset2.jpg",
