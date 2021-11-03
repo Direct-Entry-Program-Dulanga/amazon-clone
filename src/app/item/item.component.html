@@ -2,17 +2,16 @@
   <img class="item-image" src="{{item.image}}" alt="product">
   <div>
     <p class="item-title">{{item.title}}</p>
-    <div class="item-rating" [ngSwitch]="4">
+    <div class="item-rating" [ngSwitch]="item.rating">
       <div *ngSwitchCase="5">⭐⭐⭐⭐⭐</div>
       <div *ngSwitchCase="4">⭐⭐⭐⭐</div>
       <div *ngSwitchCase="3">⭐⭐⭐</div>
       <div *ngSwitchCase="2">⭐⭐</div>
       <div *ngSwitchCase="1">⭐</div>
-      <div *ngSwitchCase="0"></div>
     </div>
-    <div class="item-price">price<span>{{299 | currency: 'USD'}}</span></div>
+    <div class="item-price">price<span>{{item.price | currency: 'USD'}}</span></div>
     Add to cart
-    <div class="item-stock">In Stock: <span>10</span></div>
+    <div class="item-stock">In Stock: <span>{{item.qty}}</span></div>
     <div *ngIf="false" class="out-of-stock">Out of Stock</div>
     <div class="input-group mb-3 add-to-cart-ctrl">
       <button class="btn btn-outline-secondary" type="button">-</button>
@@ -22,5 +21,5 @@
   </div>
 </div>
 <div class="item-description">
-  <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+  {{item.description??'No Description'}}
 </div>
