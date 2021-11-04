@@ -24,7 +24,7 @@ export class CartService {
         this.cartItems.splice(this.cartItems.indexOf(item), 1);
       }
     }else{
-      this.cartItems.push({code: it.code, qty:toCart});
+      this.cartItems.push({code: it.code, qty: toCart});
     }
     this.calculateTotalItems();
   }
@@ -52,5 +52,6 @@ export class CartService {
 
   removeItemFromCart(code: string): void{
     this.cartItems = this.cartItems.filter(item => item.code !== code);
+    this.calculateTotalItems();
   }
 }
