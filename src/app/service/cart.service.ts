@@ -49,4 +49,8 @@ export class CartService {
 
     return item? item.qty: 0;
   }
+
+  getAllCartItems(): Array<{code: string, qty: number}>{
+    return this.cartItems;
+  }
 }
