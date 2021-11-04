@@ -7,9 +7,9 @@ import {Subject} from "rxjs";
 })
 export class CartService {
 
-  cartItems: Array<{code: string, qty: number}> = [];
+  private cartItems: Array<{code: string, qty: number}> = [];
 
-  totalItems = new Subject<number>();
+  private totalItems = new Subject<number>();
 
   constructor() {
   }
@@ -38,10 +38,6 @@ export class CartService {
 
   getTotalItemsInCart(): Subject<number>{
     return this.totalItems;
-    // let totalItems = 0;
-    //
-    // this.cartItems.forEach(item => totalItems += item.qty);
-    // return totalItems;
   }
 
   getQtyInCart(code: string): number{
@@ -52,5 +48,9 @@ export class CartService {
 
   getAllCartItems(): Array<{code: string, qty: number}>{
     return this.cartItems;
+  }
+
+  removeItemFromCart(code: string): void{
+    this.cartItems = this.cartItems.filter(item => item.code !== code);
   }
 }
