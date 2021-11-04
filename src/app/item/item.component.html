@@ -1,7 +1,7 @@
 <div class="item-container">
   <img class="item-image" src="{{item.image}}" alt="product">
   <div>
-    <p class="item-title">{{item.title}}</p>
+    <h2 class="item-title">{{item.title}}</h2>
     <div class="item-rating" [ngSwitch]="item.rating">
       <div *ngSwitchCase="5">⭐⭐⭐⭐⭐</div>
       <div *ngSwitchCase="4">⭐⭐⭐⭐</div>
@@ -10,16 +10,16 @@
       <div *ngSwitchCase="1">⭐</div>
     </div>
     <div class="item-price">price<span>{{item.price | currency: 'USD'}}</span></div>
+    <div *ngIf="inCart !== item.qty" class="item-stock">In Stock: <span>{{item.qty - inCart}}</span></div>
+    <div *ngIf="inCart === item.qty" class="out-of-stock">Out of Stock</div>
     Add to cart
-    <div class="item-stock">In Stock: <span>{{item.qty}}</span></div>
-    <div *ngIf="false" class="out-of-stock">Out of Stock</div>
     <div class="input-group mb-3 add-to-cart-ctrl">
-      <button class="btn btn-outline-secondary" type="button">-</button>
-      <input type="text" class="form-control"[disabled]="true" value="50">
-      <button class="btn btn-outline-secondary" type="button">+</button>
+      <button [disabled]="inCart === 0" class="btn btn-outline-secondary" type="button" (click)="updateCart(false)">-</button>
+      <input type="text" class="form-control" [(ngModel)]="inCart" [disabled]="true">
+      <button [disabled]="inCart === item.qty" class="btn btn-outline-secondary" type="button" (click)="updateCart(true)">+</button>
     </div>
   </div>
 </div>
 <div class="item-description">
-  {{item.description??'No Description'}}
+  {{item.description?? 'No Description'}}
 </div>

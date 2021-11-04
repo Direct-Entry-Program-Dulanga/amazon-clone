@@ -15,7 +15,7 @@ export const DUMMY_DATA: Array<Item> = [
     "Apple AirPods (2nd Generation)",
     3,
     25,
-    10),
+    10, ''),
   new Item(
     "I003",
     "assets/image/nintendo.jpg",
