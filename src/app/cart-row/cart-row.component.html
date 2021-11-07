@@ -1,6 +1,6 @@
-<img class="item-image" src="{{item.image}}" alt="cart item image">
-<div class="item-title">{{item.title}}</div>
-<div class="item-unit-price">{{item.price | currency: 'USD'}}</div>
-<div class="item-qty">{{qty}}</div>
-<div class="item-total-price">{{(item.price * qty) | currency: 'USD'}}</div>
+<img class="item-image" src="{{(item | async)?.image}}" alt="cart item image">
+<div class="item-title">{{(item | async)?.title}}</div>
+<div class="item-unit-price">{{(item | async)?.price | currency: 'USD'}}</div>
+<div class="item-qty">{{(item | async)?.qty}}</div>
+<div class="item-total-price">{{((item | async)!.price * qty) | currency: 'USD'}}</div>
 <div class="remove">❌</div>

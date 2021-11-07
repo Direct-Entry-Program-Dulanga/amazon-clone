@@ -59,7 +59,7 @@ export class CartService {
   getNetTotal(): number{
     let total = 0;
     this.cartItems.forEach(item => {
-      total += this.itemService.getItem(item.code)!.price * item.qty;
+      // total += this.itemService.getItem(item.code)!.price * item.qty;
     })
 
     return total;
