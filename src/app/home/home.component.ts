@@ -10,7 +10,7 @@ import {ItemService} from "../service/item.service";
 })
 export class HomeComponent implements OnInit {
 
-  items: Array<Item>;
+  items: Array<Item> = [];
 
   constructor(private itemService: ItemService) {
   }
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAllItems(){
+    // new Promise((res, rej) => {}).then().catch()
     this.itemService.getAllItems().subscribe( values => this.items = values, error => console.error(error));
   }
 }
