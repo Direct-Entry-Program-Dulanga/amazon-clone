@@ -9,22 +9,27 @@ import {Observable} from "rxjs";
   templateUrl: './cart-row.component.html',
   styleUrls: ['./cart-row.component.scss']
 })
-export class CartRowComponent implements OnInit, OnChanges {
+export class CartRowComponent implements OnInit{
 
-  @Input("item")
-  observableItem!: Observable<Item>;
+  // @Input("item")
+  // observableItem!: Observable<Item>;
   @Input()
   qty!: number;
   @Output()
   onRemove = new EventEmitter<void>();
+
+  @Input()
   item!: Item;
 
   constructor(private cartService: CartService) {
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.observableItem.subscribe(item => this.item = item);
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   this.observableItem.subscribe(item => {
+  //     this.item = item;
+  //   })
+  // }
+
 
   ngOnInit(): void {
   }

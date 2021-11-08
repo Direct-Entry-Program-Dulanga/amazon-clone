@@ -18,7 +18,7 @@ export class ItemService {
     return this.http.get<Array<Item>>(this.ITEM_SERVICE_API).pipe(
 
       map(items =>
-        items.map(convertToItem));
+        items.map(convertToItem)));
     }
 
     getItem(code: string): Observable<Item>{

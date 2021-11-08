@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DUMMY_DATA} from "../dummy-data";
 import {Item} from "../dto/item";
 import {ItemService} from "../service/item.service";
+import {delay} from "rxjs/operators";
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import {ItemService} from "../service/item.service";
 })
 export class HomeComponent implements OnInit {
 
-  items: Array<Item> = [];
+  items!: Array<Item>;
 
   constructor(private itemService: ItemService) {
   }
@@ -21,6 +22,6 @@ export class HomeComponent implements OnInit {
 
   loadAllItems(){
     // new Promise((res, rej) => {}).then().catch()
-    this.itemService.getAllItems().subscribe( values => this.items = values, error => console.error(error));
+    this.itemService.getAllItems().pipe(delay(2000)).subscribe( values => this.items = values, error => console.error(error));
   }
 }
