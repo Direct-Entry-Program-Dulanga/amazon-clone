@@ -14,12 +14,14 @@ export class CartRowComponent implements OnInit{
   // @Input("item")
   // observableItem!: Observable<Item>;
   @Input()
+  item!: Item;
+
+  @Input()
   qty!: number;
+
   @Output()
   onRemove = new EventEmitter<void>();
 
-  @Input()
-  item!: Item;
 
   constructor(private cartService: CartService) {
   }

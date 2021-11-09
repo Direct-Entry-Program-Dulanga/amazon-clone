@@ -13,18 +13,20 @@ export class CartItemComponent implements OnInit {
 
   @Input()
   item !: Item;
+  inCart = 0;
 
   // @Output()
   // cartOnChange = new EventEmitter<number>();
 
-
-  inCart = 0;
-
   constructor(private cartService: CartService,
-              private itemService: ItemService,
               private router: Router) { }
 
   ngOnInit(): void {
+    this.loadInCartQty();
+  }
+
+  loadInCartQty(){
+    this.inCart = this.cartService.getQtyInCart(this.item.code);
   }
 
   updateCart(increment: boolean) {
