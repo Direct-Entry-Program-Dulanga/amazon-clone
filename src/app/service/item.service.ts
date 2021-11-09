@@ -3,7 +3,7 @@ import {Item} from "../dto/item";
 import {Observable} from "rxjs";
 import {DUMMY_DATA} from "../dummy-data";
 import {HttpClient} from "@angular/common/http";
-import {filter, map} from "rxjs/operators";
+import {delay, map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
