@@ -14,6 +14,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgProgressModule} from "ngx-progressbar";
 import {NgProgressHttpModule} from "ngx-progressbar/http";
 import {ToastrModule} from "ngx-toastr";
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import {ToastrModule} from "ngx-toastr";
     ItemComponent,
     HomeComponent,
     CartComponent,
-    CartRowComponent
+    CartRowComponent,
+    SignInComponent,
+    SignUpComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +41,7 @@ import {ToastrModule} from "ngx-toastr";
       color: "#d9970a",
       spinner: false
     }),
+    BrowserAnimationsModule,
     NgProgressHttpModule,
     ToastrModule.forRoot()
   ],
