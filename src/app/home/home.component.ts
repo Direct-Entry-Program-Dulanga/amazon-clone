@@ -12,16 +12,27 @@ import {delay} from "rxjs/operators";
 export class HomeComponent implements OnInit {
 
   items!: Array<Item>;
+  onError = false;
 
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService,
+              private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
     this.loadAllItems();
   }
 
-  loadAllItems(){
-    // new Promise((res, rej) => {}).then().catch()
-    this.itemService.getAllItems().pipe(delay(2000)).subscribe( values => this.items = values, error => console.error(error));
+  loadAllItems() {
+    this.onError = false;
+    this.itemService.getAllItems().subscribe(values => {
+        this.items = values;
+      },
+      error => {
+        console.error(error);
+        this.toastrService.error(error.message, "Failed to fetch data", {
+          positionClass: 'toast-center-center',
+          progressBar: true
+        }).onHidden.subscribe(val => this.onError = true);
+      });
   }
 }
