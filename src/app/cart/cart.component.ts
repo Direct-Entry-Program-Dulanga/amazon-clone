@@ -39,4 +39,8 @@ export class CartComponent implements OnInit {
   calculateNetTotal(): void{
     this.total = this.cartService.getNetTotal();
   }
+
+  checkout() {
+
+  }
 }
